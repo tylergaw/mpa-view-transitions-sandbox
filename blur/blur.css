@@ -1,0 +1,35 @@
+@keyframes blurIn {
+  from {
+    filter: blur(100px);
+  }
+
+  to {
+    filter: blur(0);
+  }
+}
+
+@keyframes blurOut {
+  from {
+    filter: blur(0);
+  }
+
+  to {
+    filter: blur(150px);
+  }
+}
+
+/*
+  default blend mode is multiply. Set to normal to avoid effects we don't want.
+*/
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation: blurOut 0.3s;
+}
+
+::view-transition-new(root) {
+  animation: blurIn 0.5s;
+}
