@@ -26,9 +26,6 @@
   mix-blend-mode: normal;
 }
 
-/*
-  We don't want the outgoing screen to do anything, just get covered by next page.
-*/
 ::view-transition-old(root) {
   animation: slideOutToLeft 0.3s;
 }
