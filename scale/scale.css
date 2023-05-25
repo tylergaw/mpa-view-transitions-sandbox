@@ -1,0 +1,35 @@
+@keyframes scaleIn {
+  from {
+    scale: 0;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 2.5;
+  }
+}
+
+/*
+  default blend mode is multiple. Set to normal to avoid effects we don't want.
+*/
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation: scaleOut 0.5s;
+}
+
+::view-transition-new(root) {
+  animation: scaleIn 0.5s;
+}
