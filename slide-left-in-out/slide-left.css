@@ -1,0 +1,38 @@
+@keyframes slideToLeft {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+/*
+  default blend mode is multiple. Set to normal to avoid effects we don't want.
+*/
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+
+/*
+  We don't want the outgoing screen to do anything, just get covered by next page.
+*/
+::view-transition-old(root) {
+  animation: slideOutToLeft 0.3s;
+}
+
+::view-transition-new(root) {
+  animation: slideToLeft 0.3s;
+}
