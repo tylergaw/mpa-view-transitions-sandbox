@@ -1,0 +1,77 @@
+/*
+  default blend mode is multiply. Set to normal to avoid effects we don't want.
+*/
+::view-transition-old(*),
+::view-transition-new(*) {
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+/*
+  Display styles
+*/
+.items {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.item {
+  --size: 100px;
+  background-color: var(--color-bg, hsl(0, 0%, 95%));
+  display: block;
+  height: var(--size);
+  width: var(--size);
+  border: 1px solid rgba(0 0 0 / 5%);
+  border-radius: 6px;
+  font-size: 4rem;
+  text-decoration: none;
+}
+
+.item-1 {
+  --color-bg: hsl(120, 52%, 66%);
+  view-transition-name: item-1;
+}
+
+.item-2 {
+  --color-bg: hsl(4, 66%, 67%);
+  view-transition-name: item-2;
+}
+
+.item-3 {
+  --color-bg: hsl(270, 52%, 66%);
+  view-transition-name: item-3;
+}
+
+.item-large {
+  --size: 300px;
+}
+
+.item-card {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card-contents {
+  flex: 1;
+}
+
+@keyframes itemsLinkIn {
+  from {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+::view-transition-new(all-items-link) {
+  animation: itemsLinkIn 0.3s;
+}
