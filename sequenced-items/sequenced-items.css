@@ -1,0 +1,117 @@
+/*
+  NOTE: This one is many dragons. Not an ideal setup right now, but working.
+*/
+
+/*
+  We don't want a full page transition, just content.
+*/
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/*
+  Needing to have a different animation for every element to be able to stagger
+  them isn't ideal, but we can't use animation-delay for these because during
+  the delay, the element will be visible in it's final state, then jump to 
+  the start of the transition.
+*/
+@keyframes in1 {
+  0% {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes in2 {
+  0%,
+  25% {
+    opacity: 0;
+    transform: translateX(600px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes in3 {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes in4 {
+  0%,
+  75% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+::view-transition-new(box1),
+::view-transition-new(box2),
+::view-transition-new(box3),
+::view-transition-new(box4) {
+  animation: var(--anim, in1) 0.4s;
+}
+
+::view-transition-new(box2) {
+  --anim: in2;
+}
+
+::view-transition-new(box3) {
+  --anim: in3;
+}
+
+::view-transition-new(box4) {
+  --anim: in4;
+}
+
+.box:nth-of-type(1) {
+  view-transition-name: box1;
+}
+
+.box:nth-of-type(2) {
+  view-transition-name: box2;
+}
+
+.box:nth-of-type(3) {
+  view-transition-name: box3;
+}
+
+.box:nth-of-type(4) {
+  view-transition-name: box4;
+}
+
+/*
+  Display styles
+*/
+.items {
+  display: flex;
+  height: 500px;
+  gap: 1rem;
+}
+
+.box {
+  min-width: auto;
+}
