@@ -17,7 +17,7 @@ chrome://flags#view-transition-on-navigation
 
 ## Reference
 
-Posts and docs that have helped me as I'm learning how to use view transitions
+Posts, docs, and other transition examples
 
 - https://drafts.csswg.org/css-view-transitions
 - https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API
