@@ -19,7 +19,8 @@ chrome://flags#view-transition-on-navigation
 
 Posts, docs, and other transition examples
 
-- https://drafts.csswg.org/css-view-transitions
+- https://www.w3.org/TR/2024/CRD-css-view-transitions-1-20240328/ - CSS View Transitions Module Level 1
+- https://www.w3.org/TR/css-view-transitions-2/ - CSS View Transitions Module Level 2
 - https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API
 - https://daverupert.com/2023/05/getting-started-view-transitions/
 - https://adactio.com/journal/20195
