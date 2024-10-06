@@ -35,3 +35,7 @@ body {
   overflow: hidden;
   flex: 1;
 }
+
+@view-transition {
+  navigation: auto;
+}
