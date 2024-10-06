@@ -6,14 +6,7 @@ A collection of example view transitions for multi-page sites.
 
 ## 🐲 Here be dragons
 
-This is experimental, in progress technology. **Things will break**.
-
-To see any of the examples working, you must have two Chrome flags enabled:
-
-```
-chrome://flags#view-transition
-chrome://flags#view-transition-on-navigation
-```
+This is in progress technology. **Things will break**.
 
 ## Reference
 
